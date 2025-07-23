@@ -7542,7 +7542,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -7551,16 +7551,1157 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a7831f9d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a7831f9d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"WA_Fn-UseC_-HR-Employee-Attrition.csv"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_employee</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"WA_Fn-UseC_-HR-Employee-Attrition.csv"</span><span class="p">)</span>
+<span class="n">df_employee</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Age</th>
+<th>Attrition</th>
+<th>BusinessTravel</th>
+<th>DailyRate</th>
+<th>Department</th>
+<th>DistanceFromHome</th>
+<th>Education</th>
+<th>EducationField</th>
+<th>EmployeeCount</th>
+<th>EmployeeNumber</th>
+<th>...</th>
+<th>RelationshipSatisfaction</th>
+<th>StandardHours</th>
+<th>StockOptionLevel</th>
+<th>TotalWorkingYears</th>
+<th>TrainingTimesLastYear</th>
+<th>WorkLifeBalance</th>
+<th>YearsAtCompany</th>
+<th>YearsInCurrentRole</th>
+<th>YearsSinceLastPromotion</th>
+<th>YearsWithCurrManager</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>41</td>
+<td>Yes</td>
+<td>Travel_Rarely</td>
+<td>1102</td>
+<td>Sales</td>
+<td>1</td>
+<td>2</td>
+<td>Life Sciences</td>
+<td>1</td>
+<td>1</td>
+<td>...</td>
+<td>1</td>
+<td>80</td>
+<td>0</td>
+<td>8</td>
+<td>0</td>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<th>1</th>
+<td>49</td>
+<td>No</td>
+<td>Travel_Frequently</td>
+<td>279</td>
+<td>Research &amp; Development</td>
+<td>8</td>
+<td>1</td>
+<td>Life Sciences</td>
+<td>1</td>
+<td>2</td>
+<td>...</td>
+<td>4</td>
+<td>80</td>
+<td>1</td>
+<td>10</td>
+<td>3</td>
+<td>3</td>
+<td>10</td>
+<td>7</td>
+<td>1</td>
+<td>7</td>
+</tr>
+<tr>
+<th>2</th>
+<td>37</td>
+<td>Yes</td>
+<td>Travel_Rarely</td>
+<td>1373</td>
+<td>Research &amp; Development</td>
+<td>2</td>
+<td>2</td>
+<td>Other</td>
+<td>1</td>
+<td>4</td>
+<td>...</td>
+<td>2</td>
+<td>80</td>
+<td>0</td>
+<td>7</td>
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>33</td>
+<td>No</td>
+<td>Travel_Frequently</td>
+<td>1392</td>
+<td>Research &amp; Development</td>
+<td>3</td>
+<td>4</td>
+<td>Life Sciences</td>
+<td>1</td>
+<td>5</td>
+<td>...</td>
+<td>3</td>
+<td>80</td>
+<td>0</td>
+<td>8</td>
+<td>3</td>
+<td>3</td>
+<td>8</td>
+<td>7</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>27</td>
+<td>No</td>
+<td>Travel_Rarely</td>
+<td>591</td>
+<td>Research &amp; Development</td>
+<td>2</td>
+<td>1</td>
+<td>Medical</td>
+<td>1</td>
+<td>7</td>
+<td>...</td>
+<td>4</td>
+<td>80</td>
+<td>1</td>
+<td>6</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>1465</th>
+<td>36</td>
+<td>No</td>
+<td>Travel_Frequently</td>
+<td>884</td>
+<td>Research &amp; Development</td>
+<td>23</td>
+<td>2</td>
+<td>Medical</td>
+<td>1</td>
+<td>2061</td>
+<td>...</td>
+<td>3</td>
+<td>80</td>
+<td>1</td>
+<td>17</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td>2</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<th>1466</th>
+<td>39</td>
+<td>No</td>
+<td>Travel_Rarely</td>
+<td>613</td>
+<td>Research &amp; Development</td>
+<td>6</td>
+<td>1</td>
+<td>Medical</td>
+<td>1</td>
+<td>2062</td>
+<td>...</td>
+<td>1</td>
+<td>80</td>
+<td>1</td>
+<td>9</td>
+<td>5</td>
+<td>3</td>
+<td>7</td>
+<td>7</td>
+<td>1</td>
+<td>7</td>
+</tr>
+<tr>
+<th>1467</th>
+<td>27</td>
+<td>No</td>
+<td>Travel_Rarely</td>
+<td>155</td>
+<td>Research &amp; Development</td>
+<td>4</td>
+<td>3</td>
+<td>Life Sciences</td>
+<td>1</td>
+<td>2064</td>
+<td>...</td>
+<td>2</td>
+<td>80</td>
+<td>1</td>
+<td>6</td>
+<td>0</td>
+<td>3</td>
+<td>6</td>
+<td>2</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<th>1468</th>
+<td>49</td>
+<td>No</td>
+<td>Travel_Frequently</td>
+<td>1023</td>
+<td>Sales</td>
+<td>2</td>
+<td>3</td>
+<td>Medical</td>
+<td>1</td>
+<td>2065</td>
+<td>...</td>
+<td>4</td>
+<td>80</td>
+<td>0</td>
+<td>17</td>
+<td>3</td>
+<td>2</td>
+<td>9</td>
+<td>6</td>
+<td>0</td>
+<td>8</td>
+</tr>
+<tr>
+<th>1469</th>
+<td>34</td>
+<td>No</td>
+<td>Travel_Rarely</td>
+<td>628</td>
+<td>Research &amp; Development</td>
+<td>8</td>
+<td>3</td>
+<td>Medical</td>
+<td>1</td>
+<td>2068</td>
+<td>...</td>
+<td>1</td>
+<td>80</td>
+<td>0</td>
+<td>6</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>1470 rows × 35 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=25060fcf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">pip</span> install -q scikit-learn
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4c71451f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_employee</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"EmployeeNumber"</span><span class="p">,</span> <span class="s2">"Over18"</span><span class="p">,</span> <span class="s2">"StandardHours"</span><span class="p">,</span> <span class="s2">"EmployeeCount"</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cc8030e4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_employee</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_employee</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">"Yes"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"No"</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=03456eff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_train</span><span class="p">,</span> <span class="n">df_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">df_employee</span><span class="p">,</span>
+    <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">stratify</span><span class="o">=</span><span class="n">df_employee</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">],</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+<span class="n">df_test</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Age</th>
+<th>Attrition</th>
+<th>BusinessTravel</th>
+<th>DailyRate</th>
+<th>Department</th>
+<th>DistanceFromHome</th>
+<th>Education</th>
+<th>EducationField</th>
+<th>EnvironmentSatisfaction</th>
+<th>Gender</th>
+<th>...</th>
+<th>PerformanceRating</th>
+<th>RelationshipSatisfaction</th>
+<th>StockOptionLevel</th>
+<th>TotalWorkingYears</th>
+<th>TrainingTimesLastYear</th>
+<th>WorkLifeBalance</th>
+<th>YearsAtCompany</th>
+<th>YearsInCurrentRole</th>
+<th>YearsSinceLastPromotion</th>
+<th>YearsWithCurrManager</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1061</th>
+<td>24</td>
+<td>0</td>
+<td>Non-Travel</td>
+<td>830</td>
+<td>Sales</td>
+<td>13</td>
+<td>2</td>
+<td>Life Sciences</td>
+<td>4</td>
+<td>Female</td>
+<td>...</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>891</th>
+<td>44</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>1117</td>
+<td>Research &amp; Development</td>
+<td>2</td>
+<td>1</td>
+<td>Life Sciences</td>
+<td>1</td>
+<td>Female</td>
+<td>...</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>10</td>
+<td>5</td>
+<td>3</td>
+<td>10</td>
+<td>5</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<th>456</th>
+<td>31</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>688</td>
+<td>Sales</td>
+<td>7</td>
+<td>3</td>
+<td>Life Sciences</td>
+<td>3</td>
+<td>Male</td>
+<td>...</td>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>10</td>
+<td>3</td>
+<td>2</td>
+<td>5</td>
+<td>4</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<th>922</th>
+<td>44</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>1199</td>
+<td>Research &amp; Development</td>
+<td>4</td>
+<td>2</td>
+<td>Life Sciences</td>
+<td>3</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>26</td>
+<td>4</td>
+<td>2</td>
+<td>25</td>
+<td>9</td>
+<td>14</td>
+<td>13</td>
+</tr>
+<tr>
+<th>69</th>
+<td>36</td>
+<td>1</td>
+<td>Travel_Rarely</td>
+<td>318</td>
+<td>Research &amp; Development</td>
+<td>9</td>
+<td>3</td>
+<td>Medical</td>
+<td>4</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>1269</th>
+<td>43</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>244</td>
+<td>Human Resources</td>
+<td>2</td>
+<td>3</td>
+<td>Life Sciences</td>
+<td>2</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>10</td>
+<td>5</td>
+<td>3</td>
+<td>9</td>
+<td>7</td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr>
+<th>1352</th>
+<td>44</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>170</td>
+<td>Research &amp; Development</td>
+<td>1</td>
+<td>4</td>
+<td>Life Sciences</td>
+<td>2</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>10</td>
+<td>5</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<th>1236</th>
+<td>36</td>
+<td>1</td>
+<td>Travel_Rarely</td>
+<td>1456</td>
+<td>Sales</td>
+<td>13</td>
+<td>5</td>
+<td>Marketing</td>
+<td>2</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>16</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<th>1023</th>
+<td>56</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>1255</td>
+<td>Research &amp; Development</td>
+<td>1</td>
+<td>2</td>
+<td>Life Sciences</td>
+<td>1</td>
+<td>Female</td>
+<td>...</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<th>285</th>
+<td>37</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>1372</td>
+<td>Research &amp; Development</td>
+<td>1</td>
+<td>3</td>
+<td>Life Sciences</td>
+<td>4</td>
+<td>Female</td>
+<td>...</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>17</td>
+<td>3</td>
+<td>3</td>
+<td>17</td>
+<td>12</td>
+<td>5</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>294 rows × 31 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e6a925a5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_train</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Age</th>
+<th>Attrition</th>
+<th>BusinessTravel</th>
+<th>DailyRate</th>
+<th>Department</th>
+<th>DistanceFromHome</th>
+<th>Education</th>
+<th>EducationField</th>
+<th>EnvironmentSatisfaction</th>
+<th>Gender</th>
+<th>...</th>
+<th>PerformanceRating</th>
+<th>RelationshipSatisfaction</th>
+<th>StockOptionLevel</th>
+<th>TotalWorkingYears</th>
+<th>TrainingTimesLastYear</th>
+<th>WorkLifeBalance</th>
+<th>YearsAtCompany</th>
+<th>YearsInCurrentRole</th>
+<th>YearsSinceLastPromotion</th>
+<th>YearsWithCurrManager</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1194</th>
+<td>47</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>1225</td>
+<td>Sales</td>
+<td>2</td>
+<td>4</td>
+<td>Life Sciences</td>
+<td>2</td>
+<td>Female</td>
+<td>...</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>29</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<th>128</th>
+<td>22</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>594</td>
+<td>Research &amp; Development</td>
+<td>2</td>
+<td>1</td>
+<td>Technical Degree</td>
+<td>3</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<th>810</th>
+<td>46</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>406</td>
+<td>Sales</td>
+<td>3</td>
+<td>1</td>
+<td>Marketing</td>
+<td>1</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>23</td>
+<td>3</td>
+<td>3</td>
+<td>12</td>
+<td>9</td>
+<td>4</td>
+<td>9</td>
+</tr>
+<tr>
+<th>478</th>
+<td>25</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>622</td>
+<td>Sales</td>
+<td>13</td>
+<td>1</td>
+<td>Medical</td>
+<td>2</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>7</td>
+<td>1</td>
+<td>3</td>
+<td>7</td>
+<td>4</td>
+<td>0</td>
+<td>6</td>
+</tr>
+<tr>
+<th>491</th>
+<td>43</td>
+<td>0</td>
+<td>Travel_Frequently</td>
+<td>1001</td>
+<td>Research &amp; Development</td>
+<td>9</td>
+<td>5</td>
+<td>Medical</td>
+<td>4</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>10</td>
+<td>3</td>
+<td>3</td>
+<td>8</td>
+<td>7</td>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>1213</th>
+<td>23</td>
+<td>1</td>
+<td>Travel_Rarely</td>
+<td>427</td>
+<td>Sales</td>
+<td>7</td>
+<td>3</td>
+<td>Life Sciences</td>
+<td>3</td>
+<td>Male</td>
+<td>...</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<th>963</th>
+<td>38</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>1009</td>
+<td>Sales</td>
+<td>2</td>
+<td>2</td>
+<td>Life Sciences</td>
+<td>2</td>
+<td>Female</td>
+<td>...</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>11</td>
+<td>3</td>
+<td>3</td>
+<td>7</td>
+<td>7</td>
+<td>1</td>
+<td>7</td>
+</tr>
+<tr>
+<th>734</th>
+<td>22</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>217</td>
+<td>Research &amp; Development</td>
+<td>8</td>
+<td>1</td>
+<td>Life Sciences</td>
+<td>2</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th>1315</th>
+<td>36</td>
+<td>0</td>
+<td>Travel_Rarely</td>
+<td>430</td>
+<td>Research &amp; Development</td>
+<td>2</td>
+<td>4</td>
+<td>Other</td>
+<td>4</td>
+<td>Female</td>
+<td>...</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>15</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>1292</th>
+<td>39</td>
+<td>0</td>
+<td>Travel_Frequently</td>
+<td>766</td>
+<td>Sales</td>
+<td>20</td>
+<td>3</td>
+<td>Life Sciences</td>
+<td>3</td>
+<td>Male</td>
+<td>...</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>7</td>
+<td>6</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>1176 rows × 31 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1eac01d0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_employee</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>Attrition
+0    0.838776
+1    0.161224
+Name: proportion, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=123b33db">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>Attrition
+0    0.838435
+1    0.161565
+Name: proportion, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=51babbe2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_test</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>Attrition
+0    0.840136
+1    0.159864
+Name: proportion, dtype: float64</pre>
 </div>
 </div>
 </div>
