@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Employee-resign-model-development</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Employee-resign-model-eval</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7511,7 +7511,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a186692">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b10c9d19">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7526,23 +7526,23 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af98ab11">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3365f62c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="2">
-<li>วัตถุประสงค์ของระบบต้นแบบ
-เพื่อพัฒนาพัฒนาระบบช่วยวิเคราะห์และคาดการณ์ความเสี่ยงในการลาออกของพนักงาน (Employee Attrition)
-ใช้เทคนิค Feature Engineering เพื่อปรับปรุงคุณภาพข้อมูล
-โดยที่ถ้าพนักงานลาออก (Attrition) จะแสดงเป็น 1 และถ้าไม่ลาออกจะแสดงเป็น 0</li>
+<li>วัตถุประสงค์ของระบบต้นแบบ</li>
 </ol>
+<ul>
+<li>เพื่อพัฒนาพัฒนาระบบช่วยวิเคราะห์และคาดการณ์ความเสี่ยงในการลาออกของพนักงาน (Employee Attrition)</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca551d63">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=98977289">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7554,12 +7554,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=22e608bf">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=33429c22">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -7575,7 +7575,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7892,139 +7892,208 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=950b421a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=67eb8d7b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="4">
-<li>ปั​ญห​า ML ของตั​วเอ​งเป็นปั​ญหา​ป​ระเภ​ทใด</li>
+<li>ใช้ baseline และ วิธีการประเมินอะไรได้บ้าง อย่างไร มีค่าเป็นเท่าไหร่</li>
 </ol>
 <ul>
-<li>Classification</li>
+<li>ใช้ DummyClassifier โดยมี strategy ที่เหมาะสมได้แก่<ul>
+<li>most_frequent มีค่าประมาณ 0.821</li>
+<li>stratified มีค่าประมาณ 0.703</li>
+<li>uniform มีค่าประมาณ 0.492</li>
+<li>constant มีค่าประมาณ 0.821</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2683da28">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8bce975b">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">df_employee</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">df_employee_val</span><span class="p">,</span> <span class="n">df_employee_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">df_employee</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4f048709">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.dummy</span><span class="w"> </span><span class="kn">import</span> <span class="n">DummyClassifier</span>
+<span class="n">dummy_employee</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"most_frequent"</span><span class="p">)</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_val</span><span class="p">,</span> <span class="n">df_employee_val</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>0.8217687074829932</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e8e84a70">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dummy_employee</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"stratified"</span><span class="p">)</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_val</span><span class="p">,</span> <span class="n">df_employee_val</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>0.6993197278911565</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ebfdd33a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dummy_employee</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"uniform"</span><span class="p">)</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_val</span><span class="p">,</span> <span class="n">df_employee_val</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>0.5170068027210885</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=db74b057">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dummy_employee</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"constant"</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="s2">"No"</span><span class="p">)</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_val</span><span class="p">,</span> <span class="n">df_employee_val</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>0.8217687074829932</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ce39f458">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="5">
-<li>f​eat​ur​es ที่ใช้ในการทำนา​ยมีอะ​ไรบ้าง</li>
+<li>training score, test score ปัจจุบันมีค่าเท่าไหร่</li>
 </ol>
-<ul>
-<li>อายุ (Age)</li>
-<li>ระยะเวลาทำงาน (YearsAtCompany)</li>
-<li>ระดับความพึงพอใจ (JobSatisfaction)</li>
-<li>จำนวนชั่วโมงทำงาน (OverTime)</li>
-<li>ระดับการศึกษา (Education)</li>
-<li>รายได้ (MonthlyIncome)</li>
-<li>การเลื่อนตำแหน่ง (YearsSinceLastPromotion)</li>
-</ul>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2df54583">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="6">
-<li>เฉ​ลย (label) ที่ต้​องกา​รทำนา​ยคื​ออ​ะไร</li>
-</ol>
-<ul>
-<li>Attrition (สถานะของพนักงานว่า ลาออก/ไม่ลาออก) โดยทั่วไป
-ลาอออก = 1
-ไม่ลาออก = 0</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cd4fc4e2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="7">
-<li>ระบบของตัวเองสาม​ารถใช้ al​gorith​m อะไรได้บ้าง เพ​ราะเห​ตุใด</li>
-</ol>
-<ul>
-<li><p>Logistic Regression
-เข้าใจง่ายเหมาะกับการนำเสนอให้ผู้บริหารหรือ HR ตีความได้ตรงไปตรงมา เร็วและเบาใช้ทรัพยากรน้อย เหมาะกับการ deploy เบื้องต้น</p>
-</li>
-<li><p>Random Forest
-แม่นยำสูง ใช้การรวมหลาย Decision Trees เพื่อลดความผิดพลาด จัดการกับข้อมูลไม่สมดุลได้ดี วิเคราะห์ feature สำคัญได้ ช่วยให้ HR เข้าใจว่าอะไรส่งผลต่อการลาออก ทนต่อ noise และเหมาะกับข้อมูลจริงที่มีความซับซ้อน</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1d1e1ab8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=82c6f580">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">OneHotEncoder</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.compose</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnTransformer</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">accuracy_score</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">df_employee</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+
+<span class="n">df_employee_val</span><span class="p">,</span> <span class="n">df_employee_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">df_employee</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=debad57b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=743a3eaf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df_employee</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"Attrition"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df_employee</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">"Yes"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"No"</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.dummy</span><span class="w"> </span><span class="kn">import</span> <span class="n">DummyClassifier</span>
 
-<span class="n">num_cols</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">"int64"</span><span class="p">,</span><span class="s2">"float64"</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
-<span class="n">cat_cols</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">"object"</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
-
-<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">([</span>
-    <span class="p">(</span><span class="s2">"num"</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">num_cols</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"cat"</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">),</span> <span class="n">cat_cols</span><span class="p">)</span>
-<span class="p">])</span>
-
-<span class="n">logreg_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-    <span class="p">(</span><span class="s2">"preprocessor"</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"classifier"</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">))</span>
-<span class="p">])</span>
-
-<span class="n">rf_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-    <span class="p">(</span><span class="s2">"preprocessor"</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"classifier"</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">))</span>
-<span class="p">])</span>
-
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">pipeline</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">"Logistic Regression"</span><span class="p">,</span> <span class="n">logreg_pipeline</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Random Forest"</span><span class="p">,</span> <span class="n">rf_pipeline</span><span class="p">)]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">=== </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> ==="</span><span class="p">)</span>
-    <span class="n">pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Accuracy:"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">dummy_employee</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"most_frequent"</span><span class="p">)</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">train_score</span> <span class="o">=</span> <span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">test_score</span> <span class="o">=</span> <span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_test</span><span class="p">,</span> <span class="n">df_employee_test</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Training Accuracy: </span><span class="si">{</span><span class="n">train_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Accuracy: </span><span class="si">{</span><span class="n">test_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8037,131 +8106,183 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-=== Logistic Regression ===
-Accuracy: 0.8605442176870748
-              precision    recall  f1-score   support
-
-           0     0.8843    0.9595    0.9204       247
-           1     0.6154    0.3404    0.4384        47
-
-    accuracy                         0.8605       294
-   macro avg     0.7499    0.6500    0.6794       294
-weighted avg     0.8413    0.8605    0.8433       294
-
-
-=== Random Forest ===
-Accuracy: 0.8469387755102041
-              precision    recall  f1-score   support
-
-           0     0.8556    0.9838    0.9153       247
-           1     0.6000    0.1277    0.2105        47
-
-    accuracy                         0.8469       294
-   macro avg     0.7278    0.5557    0.5629       294
-weighted avg     0.8148    0.8469    0.8026       294
-
+<pre>Training Accuracy: 0.8250728862973761
+Test Accuracy: 0.85578231292517
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=205acbaf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dummy_employee</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"stratified"</span><span class="p">)</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">train_score</span> <span class="o">=</span> <span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">test_score</span> <span class="o">=</span> <span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_test</span><span class="p">,</span> <span class="n">df_employee_test</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Training Accuracy: </span><span class="si">{</span><span class="n">train_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Accuracy: </span><span class="si">{</span><span class="n">test_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Training Accuracy: 0.7084548104956269
+Test Accuracy: 0.7142857142857143
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e9d46f17">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dummy_employee</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"uniform"</span><span class="p">)</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">train_score</span> <span class="o">=</span> <span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">test_score</span> <span class="o">=</span> <span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_test</span><span class="p">,</span> <span class="n">df_employee_test</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Training Accuracy: </span><span class="si">{</span><span class="n">train_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Accuracy: </span><span class="si">{</span><span class="n">test_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Training Accuracy: 0.4897959183673469
+Test Accuracy: 0.4965986394557823
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=71be2a75">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dummy_employee</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"constant"</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="s2">"No"</span><span class="p">)</span>
+<span class="n">dummy_employee</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">train_score</span> <span class="o">=</span> <span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_train</span><span class="p">,</span> <span class="n">df_employee_train</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="n">test_score</span> <span class="o">=</span> <span class="n">dummy_employee</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">df_employee_test</span><span class="p">,</span> <span class="n">df_employee_test</span><span class="p">[</span><span class="s2">"Attrition"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Training Accuracy: </span><span class="si">{</span><span class="n">train_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Accuracy: </span><span class="si">{</span><span class="n">test_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Training Accuracy: 0.8250728862973761
+Test Accuracy: 0.85578231292517
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d56372d7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5ffd203">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="6">
+<li>จากการประเมินด้วยวิธีต่าง ๆ สามารถนำโมเดลไปใช้งานจริงได้แล้วหรือไม่ เพราะเหตุใด</li>
+</ol>
+<ul>
+<li>ยังไม่สามารถใช้งานจริงได้ เพราะ Baseline ไม่ได้เรียนรู้จากคุณลักษณะจริงของพนักงาน</li>
+<li>โมเดลทำนายค่าที่พบบ่อยที่สุด คือค่า No จะพลาดพนักงานที่ลาออกจริง</li>
+<li>Baseline มีจุดประสงค์คือ วัดมาตรฐานเปรียบเทียบว่าโมเดลจริงต้องดีกว่านี้</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=88b553b3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="7">
+<li>ทำอะไรได้บ้างเพื่อให้คะแนนต่าง ๆ มีค่าสูงขึ้น และ/หรือ โมเดลมีประโยชน์มากขึ้น</li>
+</ol>
+<ul>
+<li><p>Data Improvement: ทำความสะอาดข้อมูล กำจัดค่าผิดปกติ และจัดการปัญหา class imbalance เพื่อให้โมเดลเรียนรู้ได้ดีขึ้น</p>
+</li>
+<li><p>Feature Engineering: สร้างหรือเลือกฟีเจอร์ที่มีความสัมพันธ์กับตัวแปรเป้าหมายสูง เพื่อลด noise และเพิ่ม signal</p>
+</li>
+<li><p>Model Tuning: ทดลองใช้โมเดลต่าง ๆ หรือปรับพารามิเตอร์ของโมเดลที่ใช้อยู่ เพื่อหาการตั้งค่าที่เหมาะสมที่สุด</p>
+</li>
+<li><p>Evaluation: ใช้ metric ที่เหมาะสม และอาจแบ่งชุดข้อมูล validation เพื่อป้องกัน overfitting</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f8cc84b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="8">
-<li>แต่ละ algor​ithm มี hype​rpar​am​eter อะไ​รบ้าง ปรับเป็​นอะไรไ​ด้บ้าง</li>
+<li>ปร​ะเด็น​อื่น ๆ ที่เกี่ยว​ข้องกั​บข้อมูลของ​ตัวเอง</li>
 </ol>
-<ol>
-<li><p>Logistic Regression
--penalty ช่วยลดการ overfit กับฟีเจอร์ที่มีมาก เช่น Age, JobRole, MonthlyIncome
-ค่าเริ่มต้นในsklearn l2
-สามารถปรับเป็น l1, l2, elasticnet, none
--C ปรับเพื่อควบคุมความซับซ้อนโมเดลให้เหมาะสมกับข้อมูล
-ค่าเริ่มต้นในsklearn 1.0
-สามารถปรับเป็น float ex. 0.01, 0.1, 1, 10, 100
--solver วิธีการหาคำตอบของ logistic regression
-ค่าเริ่มต้นในsklearn lbfgs
-สามารถปรับเป็น liblinear, saga, newton-cg, lbfgs
--max_iter จำนวนรอบการฝึกโมเดลสูงสุด
-ค่าเริ่มต้นในsklearn 100
-สามารถปรับเป็น 200, 500, 1000
--class_weight การถ่วงน้ำหนักคลาสต่าง ๆ (เพื่อแก้ class imbalance)
-ค่าเริ่มต้นในsklearn None
-สามารถปรับเป็น balanced หรือ dictionary เช่น {0:1,1:5}
--fit</p>
-</li>
-<li><p>Random Forest
--n_estimators จำนวนต้นไม้ในป่า (จำนวน Decision Trees)
-ค่าเริ่มต้นในsklearn 100
-สามารถปรับเป็น 200, 500, 1000
--max_depth ความลึกสูงสุดของแต่ละต้นไม้
-ค่าเริ่มต้นในsklearn None
-สามารถปรับเป็น 10, 20, 30
--min_samples_split จำนวนข้อมูลขั้นต่ำที่ต้องมีในโหนดเพื่อแยกต่อ
-ค่าเริ่มต้นในsklearn 2
-สามารถปรับเป็น 5, 10
--min_samples_leaf จำนวนตัวอย่างขั้นต่ำที่ต้องมีในโหนดใบไม้
-ค่าเริ่มต้นในsklearn 1
-สามารถปรับเป็น 2, 4
--max_features จำนวนฟีเจอร์ที่สุ่มเลือกในแต่ละ split
-ค่าเริ่มต้นในsklearn auto or sqrt
-สามารถปรับเป็น log2, จำนวน
--class_weight ถ่วงน้ำหนักคลาสต่าง ๆ
-ค่าเริ่มต้นในsklearn None
-สามารถปรับเป็น balanced
--bootstrap ใช้วิธี bootstrap sample ในการสร้างแต่ละต้นไม้
-ค่าเริ่มต้นในsklearn True
-สามารถปรับเป็น False</p>
-</li>
-</ol>
+<ul>
+<li>ตรวจสอบว่าโมเดลยังทำนาย Attrition ได้ถูกต้องถ้ามีข้อมูลบาง field ถูกเปลี่ยน โมเดลให้ผลสอดคล้องหรือไม่
+Directional expectation test</li>
+<li>ตรวจสอบว่าโมเดลตอบสนองตามตรรกะ
+Model confidence</li>
+<li>ดูว่าโมเดลมั่นใจในการทำนายแต่ละพนักงานแค่ไหน
+Model calibration</li>
+<li>ตรวจสอบว่าความน่าจะเป็นของโมเดลสอดคล้องกับผลจริง</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb849b6d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dfa73255">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="9">
-<li>คำตอบที่ได้จากการทำนายของ model เบื้องต้นปกติหรือไม่ อย่างไร ต้องมีการ p​os​t-p​roc​ess หรือไม่ อย่างไร</li>
-</ol>
-<p>คำตอบที่ได้จากการทำนายของ model เบื้องต้นปกติแต่ยังไม่พร้อมใช้งานทันที โดยเฉพาะกับข้อมูลลาออกของพนักงาน ซึ่งมักมี class imbalance (ลาออกน้อยกว่ามาก) ผลลัพธ์อาจปกติดีแต่ไม่แม่นยำ จึงต้องมีการทำ post-process เพื่อผลลัพธ์มีความแม่นยำมากขึ้นและนำไปใช้ได้จิง เช่น การทำ Feature Importance Analysis คือการดูว่า feature ไหนมีผลต่อโมเดลมากที่สุด, Class Balancing เพื่อให้โมเดลไม่ bias กับกลุ่มไม่ลาออก</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caae4809">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="10">
-<li>ปร​ะเด็น​อื่น ๆ ที่เกี่ยว​ข้องกั​บข้อมูลของ​ตัวเอง</li>
-</ol>
-<ul>
-<li>Feature Correlation
-บาง features อาจมีความสัมพันธ์กันสูง เช่น YearsAtCompany กับ TotalWorkingYears
-ควรตรวจสอบด้วย correlation matrix และพิจารณา feature selection เพื่อลด multicollinearity</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9b26f33d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="11">
 <li>ก​าร​มีส่วน​ร่วมของสม​าชิกแต่ละ​คนในกลุ่ม (แต่ล​ะคนทำอะไรบ้าง)
 6710451208 มนัสนันท์ รัตนเกียรติขจร 200</li>
 </ol>
@@ -8178,18 +8299,18 @@ weighted avg     0.8148    0.8469    0.8026       294
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca7f020f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a5462ef">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="12">
+<ol start="10">
 <li>กา​รเปิ​ดเผ​ยกา​รใช้เค​รื่อ​งมือปัญ​ญาป​ระดิษฐ์ (ใช้อะไร ใช้เพื่ออะไร ใช้อย่างไร, pro​mpt อย่างไร)</li>
 </ol>
 <ul>
-<li>ช่วยเรียบเรียงคำพูดให้สละสลวย(มีการส่งข้อมูลที่เขียนขึ้นเองเข้าไปให้เรียบเรียงคำพูด)</li>
-<li>ช่วยแนะนำ Algorithm ต่างๆ</li>
+<li>ช่วยดู error ในการเขียนโค้ด</li>
+<li>ช่วยเรียบเรียงคำพูดให้สละสลวย (มีการส่งข้อมูลที่เขียนขึ้นเองเข้าไปให้เรียบเรียงคำพูด)</li>
 <li>ให้คำแนะนำและอธิบายแนวคิด</li>
 </ul>
 </div>
