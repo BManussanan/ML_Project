@@ -7559,7 +7559,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -7575,7 +7575,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7912,7 +7912,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">joblib</span>
@@ -7929,6 +7929,33 @@ a.anchor-link {
     <span class="s1">'OverTime_Yes'</span><span class="p">,</span><span class="s1">'DailyRate'</span>
 <span class="p">]</span>
 
+<span class="n">satisfaction_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"1 - Bad (แย่สุด)"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"2 - Moderate (ปานกลาง)"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"3 - Good (ดี)"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"4 - Very Good (ดีมาก)"</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+
+<span class="n">job_level_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Entry-level (Staff / New Grad)"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"Officer / Staff"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"Senior / Specialist"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"Manager"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">"Director / Executive"</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">}</span>
+
+<span class="n">business_travel_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Never travel (0 ครั้ง/เดือน)"</span><span class="p">:</span> <span class="s2">"Non-Travel"</span><span class="p">,</span>
+    <span class="s2">"Travel occasionally (1-2 ครั้ง/เดือน)"</span><span class="p">:</span> <span class="s2">"Travel_Rarely"</span><span class="p">,</span>
+    <span class="s2">"Travel frequently (&gt;3 ครั้ง/เดือน)"</span><span class="p">:</span> <span class="s2">"Travel_Frequently"</span>
+<span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">scale_income</span><span class="p">(</span><span class="n">income_baht</span><span class="p">):</span>
+    <span class="n">min_baht</span><span class="p">,</span> <span class="n">max_baht</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">100000</span>
+    <span class="n">min_dataset</span><span class="p">,</span> <span class="n">max_dataset</span> <span class="o">=</span> <span class="mi">1009</span><span class="p">,</span> <span class="mi">19999</span>
+    <span class="n">scaled</span> <span class="o">=</span> <span class="p">(</span><span class="n">income_baht</span> <span class="o">-</span> <span class="n">min_baht</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_dataset</span> <span class="o">-</span> <span class="n">min_dataset</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">max_baht</span> <span class="o">-</span> <span class="n">min_baht</span><span class="p">)</span> <span class="o">+</span> <span class="n">min_dataset</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">min_dataset</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">scaled</span><span class="p">,</span> <span class="n">max_dataset</span><span class="p">))</span>
+
 <span class="k">def</span><span class="w"> </span><span class="nf">predict_attrition</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">overtime</span><span class="p">,</span> <span class="n">monthly_income</span><span class="p">,</span> <span class="n">years_at_company</span><span class="p">,</span> <span class="n">years_in_current_role</span><span class="p">,</span>
                       <span class="n">job_satisfaction</span><span class="p">,</span> <span class="n">env_satisfaction</span><span class="p">,</span> <span class="n">job_level</span><span class="p">,</span> <span class="n">business_travel</span><span class="p">):</span>
 
@@ -7936,13 +7963,18 @@ a.anchor-link {
 
     <span class="n">sample</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">age</span>
     <span class="n">sample</span><span class="p">[</span><span class="s1">'OverTime_Yes'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">overtime</span> <span class="o">==</span> <span class="s2">"Yes"</span> <span class="k">else</span> <span class="mi">0</span>
-    <span class="n">sample</span><span class="p">[</span><span class="s1">'MonthlyIncome'</span><span class="p">]</span> <span class="o">=</span> <span class="n">monthly_income</span>
+
+    <span class="n">scaled_income</span> <span class="o">=</span> <span class="n">scale_income</span><span class="p">(</span><span class="n">monthly_income</span><span class="p">)</span>
+    <span class="n">sample</span><span class="p">[</span><span class="s1">'MonthlyIncome'</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaled_income</span>
+
     <span class="n">sample</span><span class="p">[</span><span class="s1">'YearsAtCompany'</span><span class="p">]</span> <span class="o">=</span> <span class="n">years_at_company</span>
     <span class="n">sample</span><span class="p">[</span><span class="s1">'YearsInCurrentRole'</span><span class="p">]</span> <span class="o">=</span> <span class="n">years_in_current_role</span>
-    <span class="n">sample</span><span class="p">[</span><span class="s1">'JobSatisfaction'</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_satisfaction</span>
-    <span class="n">sample</span><span class="p">[</span><span class="s1">'EnvironmentSatisfaction'</span><span class="p">]</span> <span class="o">=</span> <span class="n">env_satisfaction</span>
-    <span class="n">sample</span><span class="p">[</span><span class="s1">'JobLevel'</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_level</span>
-    <span class="n">sample</span><span class="p">[</span><span class="s1">'BusinessTravel_Travel_Frequently'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">business_travel</span> <span class="o">==</span> <span class="s2">"Travel_Frequently"</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">sample</span><span class="p">[</span><span class="s1">'JobSatisfaction'</span><span class="p">]</span> <span class="o">=</span> <span class="n">satisfaction_map</span><span class="p">[</span><span class="n">job_satisfaction</span><span class="p">]</span>
+    <span class="n">sample</span><span class="p">[</span><span class="s1">'EnvironmentSatisfaction'</span><span class="p">]</span> <span class="o">=</span> <span class="n">satisfaction_map</span><span class="p">[</span><span class="n">env_satisfaction</span><span class="p">]</span>
+    <span class="n">sample</span><span class="p">[</span><span class="s1">'JobLevel'</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_level_map</span><span class="p">[</span><span class="n">job_level</span><span class="p">]</span>
+    
+    <span class="n">travel_value</span> <span class="o">=</span> <span class="n">business_travel_map</span><span class="p">[</span><span class="n">business_travel</span><span class="p">]</span>
+    <span class="n">sample</span><span class="p">[</span><span class="s1">'BusinessTravel_Travel_Frequently'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">travel_value</span> <span class="o">==</span> <span class="s2">"Travel_Frequently"</span> <span class="k">else</span> <span class="mi">0</span>
 
     <span class="n">sample</span><span class="p">[</span><span class="s1">'StockOptionLevel'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">sample</span><span class="p">[</span><span class="s1">'YearsSinceLastPromotion'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -7954,26 +7986,33 @@ a.anchor-link {
     <span class="n">pred</span> <span class="o">=</span> <span class="n">attrition_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sample</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">return</span> <span class="s2">"Yes (ลาออก)"</span> <span class="k">if</span> <span class="n">pred</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">"No (ไม่ลาออก)"</span>
 
+
 <span class="n">overtime</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Yes'</span><span class="p">,</span> <span class="s1">'No'</span><span class="p">]</span>
-<span class="n">business_travel</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Non-Travel'</span><span class="p">,</span> <span class="s1">'Travel_Rarely'</span><span class="p">,</span> <span class="s1">'Travel_Frequently'</span><span class="p">]</span>
+<span class="n">satisfaction_choices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">satisfaction_map</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">job_level_choices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">job_level_map</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">business_travel_choices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">business_travel_map</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 
 <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Blocks</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="n">gr</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">Soft</span><span class="p">())</span> <span class="k">as</span> <span class="n">demo</span><span class="p">:</span>
     <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Row</span><span class="p">():</span>
         <span class="n">age</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Age"</span><span class="p">,</span> <span class="n">minimum</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">monthly_income</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Monthly Income"</span><span class="p">,</span> <span class="n">minimum</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">monthly_income</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">"Monthly Income (บาท)"</span><span class="p">,</span>
+            <span class="n">minimum</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+            <span class="n">maximum</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Row</span><span class="p">():</span>
         <span class="n">years_at_company</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Years At Company"</span><span class="p">,</span> <span class="n">minimum</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">years_in_current_role</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Years In Current Role"</span><span class="p">,</span> <span class="n">minimum</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Row</span><span class="p">():</span>
-        <span class="n">job_satisfaction</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Job Satisfaction (1-4)"</span><span class="p">,</span> <span class="n">minimum</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">env_satisfaction</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Environment Satisfaction (1-4)"</span><span class="p">,</span> <span class="n">minimum</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">job_satisfaction</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">satisfaction_choices</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Job Satisfaction"</span><span class="p">)</span>
+        <span class="n">env_satisfaction</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">satisfaction_choices</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Environment Satisfaction"</span><span class="p">)</span>
 
     <span class="k">with</span> <span class="n">gr</span><span class="o">.</span><span class="n">Row</span><span class="p">():</span>
-        <span class="n">job_level</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Job Level"</span><span class="p">,</span> <span class="n">minimum</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">overtime_input</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">overtime</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"OverTime"</span><span class="p">)</span>
-        <span class="n">business_travel_input</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">business_travel</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Business Travel"</span><span class="p">)</span>
+        <span class="n">job_level</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">job_level_choices</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Job Level"</span><span class="p">)</span>
+        <span class="n">overtime_input</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">overtime</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Do you often work overtime?"</span><span class="p">)</span>
+        <span class="n">business_travel_input</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">business_travel_choices</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Business Travel (ครั้ง/เดือน)"</span><span class="p">)</span>
 
     <span class="n">predict_btn</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="s2">"Predict Attrition"</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">"primary"</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">gr</span><span class="o">.</span><span class="n">Textbox</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Prediction Result"</span><span class="p">)</span>
@@ -7997,9 +8036,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>c:\Users\borfor\Documents\ML-project\.venv\Lib\site-packages\tqdm\auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
-  from .autonotebook import tqdm as notebook_tqdm
-c:\Users\borfor\Documents\ML-project\.venv\Lib\site-packages\sklearn\base.py:442: InconsistentVersionWarning: Trying to unpickle estimator DecisionTreeClassifier from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+<pre>c:\Users\borfor\Documents\ML-project\.venv\Lib\site-packages\sklearn\base.py:442: InconsistentVersionWarning: Trying to unpickle estimator DecisionTreeClassifier from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
 https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
   warnings.warn(
 c:\Users\borfor\Documents\ML-project\.venv\Lib\site-packages\sklearn\base.py:442: InconsistentVersionWarning: Trying to unpickle estimator RandomForestClassifier from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
@@ -8011,8 +8048,8 @@ https://scikit-learn.org/stable/model_persistence.html#security-maintainability-
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>* Running on local URL:  http://127.0.0.1:7863
-* Running on public URL: https://e35bdce21d445e466c.gradio.live
+<pre>* Running on local URL:  http://127.0.0.1:7868
+* Running on public URL: https://7a5e06e1a170d7bfde.gradio.live
 
 This share link expires in 1 week. For free permanent hosting and GPU upgrades, run `gradio deploy` from the terminal in the working directory to deploy to Hugging Face Spaces (https://huggingface.co/spaces)
 </pre>
@@ -8021,7 +8058,7 @@ This share link expires in 1 week. For free permanent hosting and GPU upgrades, 
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div><iframe allow="autoplay; camera; microphone; clipboard-read; clipboard-write;" allowfullscreen="" frameborder="0" height="500" src="https://e35bdce21d445e466c.gradio.live" width="100%"></iframe></div>
+<div><iframe allow="autoplay; camera; microphone; clipboard-read; clipboard-write;" allowfullscreen="" frameborder="0" height="500" src="https://7a5e06e1a170d7bfde.gradio.live" width="100%"></iframe></div>
 </div>
 </div>
 </div>
